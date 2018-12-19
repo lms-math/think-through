@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]> <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <meta charset='utf-8'>
+        <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+        <script type="text/javascript">
+            window.NREUM || (NREUM = {});
+            NREUM.info = {
+                "beacon": "bam.nr-data.net",
+                "errorBeacon": "bam.nr-data.net",
+                "licenseKey": "856fd58f6a",
+                "applicationID": "1703239",
+                "transactionName": "cg0KERcLWF4GFB9DEFAWDQY6FFVVBhUfQBZYFAUGHA==",
+                "queueTime": 1,
+                "applicationTime": 35,
+                "agent": ""
+            }
+        </script>
+        <script type="text/javascript">
+            window.NREUM || (NREUM = {}),
+            __nr_require = function(e, n, t) {
+                function r(t) {
+                    if (!n[t]) {
+                        var o = n[t] = {
+                            exports: {}
+                        };
+                        e[t][0].call(o.exports, function(n) {
+                            var o = e[t][1][n];
+                            return r(o || n)
+                        }, o, o.exports)
+                    }
+                    return n[t].exports
+                }
+                if ("function" == typeof __nr_require)
+                    return __nr_require;
+                for (var o = 0; o < t.length; o++)
+                    r(t[o]);
+                return r
+            }({
+                1: [function(e, n, t) {
+                    function r() {}
+                    function o(e, n, t) {
+                        return function() {
+                            return i(e, [c.now()].concat(u(arguments)), n ? null : this, t),
+                            n ? void 0 : this
+                        }
+                    }
+                    var i = e("handle")
+                      , a = e(3)
+                      , u = e(4)
+                      , f = e("ee").get("tracer")
+                      , c = e("loader")
+                      , s = NREUM;
+                    "undefined" == typeof window.newrelic && (newrelic = s);
+                    var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"]
+                      , d = "api-"
+                      , l = d + "ixn-";
+                    a(p, function(e, n) {
+                        s[n] = o(d + n, !0, "api")
+                    }),
+                    s.addPageAction = o(d + "addPageAction", !0),
+                    s.setCurrentRouteName = o(d + "routeName", !0),
+                    n.exports = newrelic,
+                    s.interaction = function() {
+                        return (new r).get()
+                    }
+                    ;
+                    var m = r.prototype = {
+                        createTracer: function(e, n) {
+                            var t = {}
+                              , r = this
+                              , o = "function" == typeof n;
+                            return i(l + "tracer", [c.now(), e, t], r),
+                            function() {
+                                if (f.emit((o ? "" : "no-") + "fn-start", [c.now(), r, o], t),
+                                o)
+                                    try {
+                                        return n.apply(this, arguments)
+                                    } catch (e) {
+                                        throw f.emit("fn-err", [arguments, this, e], t),
+                                        e
+                                    } finally {
+                                        f.emit("fn-end", [c.now()], t)
+                                    }
+                            }
+                        }
+                    };
+                    a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, n) {
+                        m[n] = o(l + n)
+                    }),
+                    newrelic.noticeError = function(e) {
+                        "string" == typeof e && (e = new Error(e)),
+                        i("err", [e, c.now()])
+                    }
+                }
+                , {}],
+                2: [function(e, n, t) {
+                    function r(e, n) {
+                        if (!o)
+                            return !1;
+                        if (e !== o)
+                            return !1;
+                        if (!n)
+                            return !0;
+                        if (!i)
+                            return !1;
+                        for (var t = i.split("."), r = n.split("."), a = 0; a < r.length; a++)
+                            if (r[a] !== t[a])
+                                return !1;
+                        return !0
+                    }
+                    var o = null
+                      , i = null
+                      , a = /Version\/(\S+)\s+Safari/;
+                    if (navigator.userAgent) {
+                        var u = navigator.userAgent
+                          , f = u.match(a);
+                        f && u.indexOf("Chrome") === -1 && u.indexOf("Chromium") === -1 && (o = "Safari",
+                        i = f[1])
+                    }
+                    n.exports = {
+                        agent: o,
+                        version: i,
+                        match: r
+                    }
+                }
+                , {}],
+                3: [function(e, n, t) {
+                    function r(e, n) {
+                        var t = []
+                          , r = ""
+                          , i = 0;
+                        for (r in e)
+                            o.call(e, r) && (t[i] = n(r, e[r]),
+                            i += 1);
+                        return t
+                    }
+                    var o = Object.prototype.hasOwnProperty;
+                    n.exports = r
+                }
+                , {}],
+                4: [function(e, n, t) {
+                    function r(e, n, t) {
+                        n || (n = 0),
+                        "undefined" == typeof t && (t = e ? e.length : 0);
+                        for (var r = -1, o = t - n || 0, i = Array(o < 0 ? 0 : o); ++r < o; )
+                            i[r] = e[n + r];
+                        return i
+                    }
+                    n.exports = r
+                }
+                , {}],
+                5: [function(e, n, t) {
+                    n.exports = {
+                        exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+                    }
+                }
+                , {}],
+                ee: [function(e, n, t) {
+                    function r() {}
+                    function o(e) {
+                        function n(e) {
+                            return e && e instanceof r ? e : e ? f(e, u, i) : i()
+                        }
+                        function t(t, r, o, i) {
+                            if (!d.aborted || i) {
+                                e && e(t, r, o);
+                                for (var a = n(o), u = v(t), f = u.length, c = 0; c < f; c++)
+                                    u[c].apply(a, r);
+                                var p = s[y[t]];
+                                return p && p.push([b, t, r, a]),
+                                a
+                            }
+                        }
+                        function l(e, n) {
+                            h[e] = v(e).concat(n)
+                        }
+                        function m(e, n) {
+                            var t = h[e];
+                            if (t)
+                                for (var r = 0; r < t.length; r++)
+                                    t[r] === n && t.splice(r, 1)
+                        }
+                        function v(e) {
+                            return h[e] || []
+                        }
+                        function g(e) {
+                            return p[e] = p[e] || o(t)
+                        }
+                        function w(e, n) {
+                            c(e, function(e, t) {
+                                n = n || "feature",
+                                y[t] = n,
+                                n in s || (s[n] = [])
+                            })
+                        }
+                        var h = {}
+                          , y = {}
+                          , b = {
+                            on: l,
+                            addEventListener: l,
+                            removeEventListener: m,
+                            emit: t,
+                            get: g,
+                            listeners: v,
+                            context: n,
+                            buffer: w,
+                            abort: a,
+                            aborted: !1
+                        };
+                        return b
+                    }
+                    function i() {
+                        return new r
+                    }
+                    function a() {
+                        (s.api || s.feature) && (d.aborted = !0,
+                        s = d.backlog = {})
+                    }
+                    var u = "nr@context"
+                      , f = e("gos")
+                      , c = e(3)
+                      , s = {}
+                      , p = {}
+                      , d = n.exports = o();
+                    d.backlog = s
+                }
+                , {}],
+                gos: [function(e, n, t) {
+                    function r(e, n, t) {
+                        if (o.call(e, n))
+                            return e[n];
+                        var r = t();
+                        if (Object.defineProperty && Object.keys)
+                            try {
+                                return Object.defineProperty(e, n, {
+                                    value: r,
+                                    writable: !0,
+                                    enumerable: !1
+                                }),
+                                r
+                            } catch (i) {}
+                        return e[n] = r,
+                        r
+                    }
+                    var o = Object.prototype.hasOwnProperty;
+                    n.exports = r
+                }
+                , {}],
+                handle: [function(e, n, t) {
+                    function r(e, n, t, r) {
+                        o.buffer([e], r),
+                        o.emit(e, n, t)
+                    }
+                    var o = e("ee").get("handle");
+                    n.exports = r,
+                    r.ee = o
+                }
+                , {}],
+                id: [function(e, n, t) {
+                    function r(e) {
+                        var n = typeof e;
+                        return !e || "object" !== n && "function" !== n ? -1 : e === window ? 0 : a(e, i, function() {
+                            return o++
+                        })
+                    }
+                    var o = 1
+                      , i = "nr@id"
+                      , a = e("gos");
+                    n.exports = r
+                }
+                , {}],
+                loader: [function(e, n, t) {
+                    function r() {
+                        if (!E++) {
+                            var e = x.info = NREUM.info
+                              , n = l.getElementsByTagName("script")[0];
+                            if (setTimeout(s.abort, 3e4),
+                            !(e && e.licenseKey && e.applicationID && n))
+                                return s.abort();
+                            c(y, function(n, t) {
+                                e[n] || (e[n] = t)
+                            }),
+                            f("mark", ["onload", a() + x.offset], null, "api");
+                            var t = l.createElement("script");
+                            t.src = "https://" + e.agent,
+                            n.parentNode.insertBefore(t, n)
+                        }
+                    }
+                    function o() {
+                        "complete" === l.readyState && i()
+                    }
+                    function i() {
+                        f("mark", ["domContent", a() + x.offset], null, "api")
+                    }
+                    function a() {
+                        return O.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((new Date).getTime(), u)) - x.offset
+                    }
+                    var u = (new Date).getTime()
+                      , f = e("handle")
+                      , c = e(3)
+                      , s = e("ee")
+                      , p = e(2)
+                      , d = window
+                      , l = d.document
+                      , m = "addEventListener"
+                      , v = "attachEvent"
+                      , g = d.XMLHttpRequest
+                      , w = g && g.prototype;
+                    NREUM.o = {
+                        ST: setTimeout,
+                        SI: d.setImmediate,
+                        CT: clearTimeout,
+                        XHR: g,
+                        REQ: d.Request,
+                        EV: d.Event,
+                        PR: d.Promise,
+                        MO: d.MutationObserver
+                    };
+                    var h = "" + location
+                      , y = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1099.min.js"
+                    }
+                      , b = g && w && w[m] && !/CriOS/.test(navigator.userAgent)
+                      , x = n.exports = {
+                        offset: u,
+                        now: a,
+                        origin: h,
+                        features: {},
+                        xhrWrappable: b,
+                        userAgent: p
+                    };
+                    e(1),
+                    l[m] ? (l[m]("DOMContentLoaded", i, !1),
+                    d[m]("load", r, !1)) : (l[v]("onreadystatechange", o),
+                    d[v]("onload", r)),
+                    f("mark", ["firstbyte", u], null, "api");
+                    var E = 0
+                      , O = e(5)
+                }
+                , {}]
+            }, {}, ["loader"]);
+        </script>
+        <meta content='width=device-width, initial-scale: 1.0' name='viewport'>
+        <meta content='TTM supports students and teachers with personalized, interactive math instruction for grades 3 through High School.' name='description'>
+        <meta name="csrf-param" content="authenticity_token"/>
+        <meta name="csrf-token" content="s6nywecnNQ0enL8+zm95jIFfe3zjGf3dBa0sKmIyevluMxsuyQ0YQqIDPYbhmMvAc0SGvPHO0reORmmFT2daPA=="/>
+        <title>Imagine Math</title>
+        <script src="https://assets.thinkthroughmath.com/assets/bugsnag-3.3.3.min-29ff8946ef2f1eb8bc9c3b623f6ecec2.js" data-apikey="61dbe56c1c6aa18e0690b527021bbc00" data-releasestage="apangea-js-production"></script>
+        <script>
+            //<![CDATA[
+            if (!window.ttm) {
+                window.ttm = {};
+            }
+            window.ttm.feature_rollouts_data = {
+                "multi_entity_users": false,
+                "chatbot": true
+            };
+            window.ttm.customer_features_data = {};
+
+            //]]>
+        </script>
+        <script>
+            window.features = {};
+            window.features.mustard = true;
+            window.features.cannotUseLocalFile = false;
+        </script>
+        <link rel="shortcut icon" type="image/x-icon" href="https://assets.thinkthroughmath.com/assets/favicon-e1010d7c77a0e928f44db7304077bee7.ico"/>
+        <link rel="apple-touch-icon-precomposed" type="image/png" href="https://assets.thinkthroughmath.com/images/apple-icon-precomposed.png"/>
+        <link rel="apple-icon-precomposed" type="image/png" href="https://assets.thinkthroughmath.com/assets/apple-icon-76x76-bb02fde810183b6c49d0f7bbbf7e3ff5.png" sizes="76x76"/>
+        <link rel="apple-icon-precomposed" type="image/png" href="https://assets.thinkthroughmath.com/assets/apple-icon-120x120-8bb2e4596c52069c42689aac4a3919b4.png" sizes="120x120"/>
+        <link rel="apple-icon-precomposed" type="image/png" href="https://assets.thinkthroughmath.com/assets/apple-icon-152x152-b9f00d03d682a1c47dc08bd32519fb5a.png" sizes="152x152"/>
+        <script src="https://assets.thinkthroughmath.com/assets/external-ee9cc8b96075a316e2b813db572479e1.js.gz"></script>
+        <link rel="stylesheet" media="screen" href="https://assets.thinkthroughmath.com/assets/external-bf0707ad77d700769904cd31f10b5a41.css.gz"/>
+        <script src="https://assets.thinkthroughmath.com/assets/compression_check-56aef5d39d64cbfb2cf87cc5d11fac8e.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-29955151-4']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            }
+            )();
+        </script>
+        <link rel="stylesheet" media="all" href="https://assets.thinkthroughmath.com/assets/tech-check-85c2b4379a766449658227a9444684fd.css.gz"/>
+        <link rel="stylesheet" href=""/>
+    </head>
+    <body class='external signIn'>
+        <div class='external--flashNotice'></div>
+        <div class='external--header'>
+            <div class='externalHeader--ttmStatusUpdate'>
+                <div class='temp-alert' id='ttm-status-update' style='display: none;'></div>
+            </div>
+            <div class='externalHeader--clientLogo'></div>
+        </div>
+    </body>
+    <div class='external--mainContent'>
+        <div class='externalHeader--logo'>
+            <a href="/">
+                <img alt="Imagine Math" title="Imagine Math" src="https://assets.thinkthroughmath.com/assets/logo-im-white2-27b81f3ece24a07743307d60ef9d5c72.png"/>
+            </a>
+        </div>
+        <div class='termsAndConditions externalContentBox'>
+            <header>
+                <h1>Privacy Policy</h1>
+            </header>
+            <section class='entry'>
+                <p>This privacy policy (this "Privacy Policy") tells you about the information that Imagine Learning, Inc. (the "Company," "we" or "our") collects in connection with the operation of its website, accessible via lms.thinkthroughmath.com (the "Site"), including when accessed through any state/district/school link that connects to the Site, how the information is used and how you can access and correct certain information that we may collect. For the purposes of this Privacy Policy, "you" and "user" means a Local Education Agency (LEA) employee, an affiliated student, or the parent or guardian of an affiliated student, who is accessing the Site through a particular username and password. Accounts for students may be created by their teachers or another entity or affiliate of the LEA (an "Authorized Person").
+</p>
+                <p>Please note that this Privacy Policy applies only to information collected from you (or, if you were enrolled by a third party, such as a school district or teacher (each, an "Authorized Person") from such Authorized Person) by the Company via the Site and does not apply to information obtained or disclosed through offline correspondence or personal contacts with the Company's representatives.
+</p>
+                <p>This Privacy Policy is effective as of October 16, 2015.
+</p>
+                <p>YOUR ACCEPTANCE OF THIS PRIVACY POLICY AND REVISIONS TO THIS PRIVACY POLICY
+</p>
+                <p>By using the Site, you agree to this Privacy Policy. If you do not agree to this Privacy Policy, you may not use the Site. The Company reserves the right, in our discretion, to change, modify, add or remove portions of this Privacy Policy from time to time, upon providing you with prior notice. We agree that changes cannot be retroactive. Changes to the Privacy Policy will be made effective upon providing you with thirty (30) days notice. Notice will be provided by sending you an email at the address we have on file for you with your account. For material changes to this Privacy Policy that affect the collection or use of personal information from students, we will notify and obtain the prior verifiable consent from the Authorized Person.
+</p>
+                <p>INFORMATION COLLECTED AND HOW WE USE IT
+</p>
+                <p>You always remain in control of the information you provide to the Company. We may collect the following types of personally identifiable information about students: name, grade level, and optional username, which an Authorized Person voluntarily submits to us. We collect name and email address for non-students if provided by Local Education Agency Personnel. If you are a Local Education Agency you may delete any information you submit to us at any time, however deletion of this information will restrict your ability to effectively use the Site.
+</p>
+                <p>Parents. If you are the parent of a student who was enrolled by an Authorized Person you may contact the Authorized Person to have your student's information removed. At the discretion of Local Education Agency Personnel, some Parents may be allowed to create accounts for students on the Site. In this case the Parent would have direct access to the student account; however the LEA remains the 'Authorized Person'.
+</p>
+                <p>Students. You must contact the Authorized Person who created your account with regard to any questions or concerns with respect to your information.
+</p>
+                <p>We may collect, maintain and use contact information you (or an Authorized Person) have voluntarily submitted so that we can contact you to respond to your comments or requests for information.
+</p>
+                <p>Like most web-based services, we may automatically receive non-identifying information through your use of the Site, such as the pages you access, the Site features you use. This information is used to improve the Site and to troubleshoot issues and is not connected in any way to any personally identifiable information you may provide to us.
+</p>
+                <p>The Site allows students to interact online with Company employed, state-certified, security-cleared math teachers for the purpose of math instruction. Information provided by you through this manner is treated as personally identifiable information.
+</p>
+                <p>DATA SHARING AND TRANSFER
+</p>
+                <p>The Company will provide data and the personal identifiable information on individual students and the analysis of trends for all students on an aggregate basis to some or all of the following (collectively "Customer"): the state education agency, the school district, a student's school or a student's teacher. The Company provides such information as a service to its Customer but it does not control the use of such data after it provides it to the Customer. Consequently, the Company takes no responsibility or liability for the use of such data after it provides it to the Customer.
+</p>
+                <p>Imagine Learning, Inc., does not provide, sell or lend any personally identifiable information to any third party.
+</p>
+                <p>The Company reserves the right to disclose your personally identifiable information based on the good faith belief that such action is necessary or appropriate to: (a) protect and defend the rights or property of the Company, or (b) act in urgent circumstances to protect the safety or security of a student, the public or of users of the Company's services and/or the Site.
+</p>
+                <p>Your personal information will generally be stored in the Company's databases, which are located in the United States. Specific information is provided on the Site's consent or registration form, where needed. Our policy is to ensure that your information is always granted the same level of protection no matter where it is stored. In the event that the Company is involved in a transaction such as a merger, stock purchase or sale, or sale of substantially all of the Company's assets, personal information may be transferred to the other party in such transaction under the same level of security it had before the transaction.
+</p>
+                <p>USE OF YOUR PERSONALLY IDENTIFIABLE INFORMATION
+</p>
+                <p>The Company stores only the student records provided to us by our Customers. As a custodian of student personally-identifiable information (PII), the Company complies with the federal Family Educational Rights and Privacy Act (FERPA) in its handling of student records.
+</p>
+                <p>Upon our collection of your personally identifiable information, the Company may use such personally identifiable information internally, separately or in combination with pre-existing information, for the following purposes:
+</p>
+                <ul>
+                    <li>To provide any requested services limited to the educational context in which the information was provided;</li>
+                    <li>To troubleshoot problems with the Site, or any services, as requested;</li>
+                    <li>To customize your experience, content or homepage on the Site; or</li>
+                    <li>To enforce our Terms of Use.</li>
+                </ul>
+                <p>Upon termination or cancellation of a Customer contract, the Company will delete all personally identifiable student data from its records. The Company may retain aggregate, non-identifying student usage information for the purpose of reporting, analytics, and improving the Company's products and services. Imagine Learning, Inc., does not provide, sell or lend any personally identifiable information to any third party.
+</p>
+                <p>COOKIES AND OTHER TECHNOLOGIES
+</p>
+                <p>Cookies help us in many ways to make your use of the Site more enjoyable and meaningful, such as understanding usage patterns and improving functionality of the Site. Cookies are text information files that your web browser places on your computer when you use a website. The Company and/or its third party suppliers, licensors or agents may use such "cookie" technology to obtain non-personal information from you. Such information may include:
+</p>
+                <ul>
+                    <li>Details of how you used our service, such as your activity on the Site, which pages you accessed, and the duration of your visit.</li>
+                    <li>Browser type, browser language, the date and time of your request and referral URL</li>
+                </ul>
+                <p>Most browsers accept cookies automatically, but can be configured not to accept them or to indicate when a cookie is being sent. The Company and/or its third party suppliers, licensors or agents may also use so-called "web beacons" to access the information contained in its cookies. These cookies do not store personally identifiable information. The Company uses the information in these cookies to personalize the Site, to understand which Site features that users access, to understand Site performance, and to troubleshoot problems with the Site.
+</p>
+                <p>SECURITY
+</p>
+                <p>We take steps to make all information received from you online as secure as reasonably possible against unauthorized access and use.
+</p>
+                <p>If we know or have reason to know of a systems security breach by an unauthorized party or that any of your Information was used for an unauthorized purpose, then we will immediately notify you electronically so that you can take appropriate protective steps. We will also post an additional notice through the Service if a security breach occurs. Depending on where you live or where your schools are located, you may also have a legal right to receive notice of a security breach in writing, and we will provide you with such required written notice in addition to the electronic notice. 
+</p>
+                <p>ACCESS TO YOUR INFORMATION
+</p>
+                <p>We attempt to keep your files complete, up-to-date, and accurate. If you are a Local Education Agency you may delete any information you submit to us at any time.
+</p>
+                <p>Parents. If you are the parent of a student who was enrolled by an Authorized Person you may contact the Authorized Person or us to have your student's information removed. At the discretion of Local Education Agency Personnel, some Parents may be allowed to create accounts for students on the Site, however the LEA Personnel remain the Authorized Person.
+</p>
+                <p>Students. If you are a student who was enrolled by an Authorized Person you must contact the Authorized Person with regard to any questions or concerns with respect to your information.
+</p>
+                <p>CHILDREN'S PRIVACY
+</p>
+                <p>The Company is strongly committed to protecting the safety and privacy of children who use the Site. We do not knowingly collect personal information online from children under 13 without consent from the Authorized Person.
+</p>
+                <p>The Company's service is directly sold to Local Educational Agencies (LEA) and, as such, the prior verifiable parental consent as required by COPPA for the collection and use of PII for children under the age of 13, is given by the "authorized person" within the LEA.
+</p>
+                <p>The Company acknowledges and agrees that the LEA's ability to consent for the parent is limited to the educational context – where an operator collects personal information from students for the use and benefit of the school, and for no other commercial purpose. The Company does not use personally identifiable information for any other commercial purpose.
+</p>
+                <p>When provided by an Authorized Person, we may receive the following pieces of personally identifiable information; the name, grade level and optional username of a child under 13, which such parent, guardian or Authorized Person has voluntarily submitted. The Company will provide such information to its Customer, as described in the "Data Sharing and Transfer" section above, and the Company takes no responsibility or liability for the use of such data after it provides it to the Customer.
+</p>
+                <p>The Site allows students to receive tutoring support from Authorized Employees of the Company. Any information submitted by students, whether it would be considered personally identifiable information or not, is treated by the Company with the same safeguards as personally identifiable information. Such information may be shared with its Customer personnel in cases where the submitted information contains harassing or threatening language, or with law enforcement or emergency personnel when the submitted information makes reference to an imminent danger to the student or to another person or persons.
+</p>
+                <p>Please note that we are prohibited from conditioning a child's participation in an activity – like contests – on the child's disclosure of more personal information than is necessary to participate in the activity. This means if we don't need a specific piece of information (like the child's email address) to allow the child to participate in a contest, we will not ask for it.
+</p>
+                <p>An Authorized Person who has given the Company permission to collect and use a child's personal information can modify, update, correct a child's information or discontinue further collection or use of a child's information in accordance with the procedures described in the "Access to Your Information" section above.
+</p>
+                <p>THIRD–PARTIES AND LINKS TO OTHER SITES
+</p>
+                <p>In an attempt to provide increased value to our users, this Site may contain links to other sites on the Internet that are owned and operated by third parties other than the Company (may include, without limitation, your state education agency, your school district and your school) (the "External Sites"). However, no such third party is affiliated with the Company, the Company has no control over these linked sites, all of which have separate privacy and data collection practices independent of the Company. The Company has no responsibility or liability for these independent policies or actions and is not responsible for the privacy practices or the content of External Sites. These External Sites are only for your convenience and therefore you access them at your own risk, and you may be subject to the terms and conditions and the privacy policies imposed by such third parties. Links do not imply that the Company sponsors, endorses, is affiliated with or associated with, or has been legally authorized to use any trademark, trade name, service mark, design, logo, symbol or other copyrighted materials displayed on or accessible through such External Sites. Nonetheless, the Company seeks to protect the integrity of its Site and the links placed upon it and therefore requests any feedback on not only its own Site, but for sites it links to as well (including if a specific link does not work). You should contact the Site administrator or Webmaster for those External Sites if you have any concerns regarding such links or the content located on such External Sites.
+</p>
+                <p>The Company may use parent emails to communicate student progress on the Site or to make parents aware of new features.
+</p>
+                <p>CHOICE AND OPT-OUT PREFERENCES
+</p>
+                <p>The Company does not collect your personally identifiable information unless you choose to provide it. If, at any time, you prefer not to receive further e-mail communications from the Company, you will have the ability to unsubscribe from such communications by means of a link or to write to us to opt out. If, at any time, you prefer not to receive any other form of communication from the Company, you will have the ability to unsubscribe from such communications by contacting us at the address below.
+</p>
+                <p>QUESTIONS OR COMMENTS
+</p>
+                <p>The Company welcomes questions and comments about this Privacy Policy. Questions or comments should be directed to the address below:
+</p>
+                <ul>
+                    <li>Privacy Office</li>
+                    <li>Imagine Learning, Inc.</li>
+                    <li>382 W Park Circle</li>
+                    <li>Provo, UT 84604</li>
+                    <li>privacy@imaginelearning.com</li>
+                    <li>866.377.5071</li>
+                </ul>
+            </section>
+        </div>
+        <div class='externalFooter--copyright'>
+            <p>
+            <div class='copyright--allRightsReserved'>© 2018 Imagine Learning, Inc. All rights reserved.
+</div>
+            <div class='copyright--termsAndPrivacy'>
+                <a class="copyright-termsOfUse" href="C:/Users/4294436/Desktop/LMS/terms.html">Terms of Use</a>
+                <a class="copyright-privacyPolicy" href="C:/Users/4294436/Desktop/LMS/privacy.html">Privacy Policy</a>
+            </div>
+</p></div></div>
+<div class='external--footer'>
+    <div class='externalFooter--privacy'>
+        <div class='privacy-badges'>
+            <a target="_blank" href="https://studentprivacypledge.org/?page_id=45">
+                <img alt="Student Privacy Pledge Signatory" src="https://assets.thinkthroughmath.com/assets/privacy_badges/privacy_pledge_badge-4301994e6fdcb11b8b18b35ae625fc37.png"/>
+            </a>
+            <img alt="iKeepSafe Privacy Safe Harbor COPPA" src="https://assets.thinkthroughmath.com/assets/privacy_badges/coppa_badge-164405489ffdd0f00a51269fcb497382.png"/>
+            <img alt="iKeepSafe Privacy Safe Harbor FERPA" src="https://assets.thinkthroughmath.com/assets/privacy_badges/ferpa_badge-7b372c33c35229973731c9e8e8e28886.png"/>
+        </div>
+    </div>
+</div>
+<div class='external--browserWarning'>
+    <script src="https://assets.thinkthroughmath.com/assets/shared/browser_warning-217bf460a5fcf5fdd2c1341e72e37dd0.js.gz"></script>
+</div>
